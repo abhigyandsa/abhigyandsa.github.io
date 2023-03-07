@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="background"></div>
-    <div class="menu-container">
+    <div class="menu-container" id="menu-container">
       <h1>dsa's eatery</h1>
       <div class="menu-sections-container">
         <div class="menu-section">
@@ -45,7 +45,7 @@
             </label>
           </div>
         </div>
-        <div class="menu-section">
+        <div class="menu-section" id="menu-section">
           <h2>Appetizers</h2>
           <div class="menu-item">
             <label>
@@ -145,7 +145,17 @@
           </div>
         </div>
       </div>
-      <button type="submit">Submit Order</button>
+      <button id="submit-button" type="submit">Submit Order</button>
+    </div>
+    <div class="thank-you-page" id="thank-you-page">
+      <h1>Thank you for your order!</h1>
+      <!-- <p>Here is what you ordered:</p>
+      <div class="order-summary">
+        <p>Main Course: <span id="main-course"></span></p>
+        <p>Appetizer: <span id="appetizer"></span></p>
+        <p>Side: <span id="side"></span></p>
+        <p>Drink: <span id="drink"></span></p>
+      </div> -->
     </div>
     <script src="script.js"></script>
   </body>
