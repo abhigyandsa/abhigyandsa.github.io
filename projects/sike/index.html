@@ -9,72 +9,33 @@
   </head>
   <body>
     <div class="background"></div>
-    <div class="menu-container" id="menu-container">
+    <div class="menu-container" id="menu-container-menu">
       <h1>dsa's eatery</h1>
       <div class="menu-sections-container">
         <div class="menu-section">
           <h2>Main Course</h2>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-main" value="Grilled Chicken Sandwich">
-              Grilled Chicken Sandwich
+              <input type="radio" name="menu-item-main" value="Burger and Fries">
+              Burger and Fries
             </label>
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-main" value="Beef Burger">
-              Beef Burger
+              <input type="radio" name="menu-item-main" value="Mixed Fruit Bowl Meal">
+              Mixed Fruit Bowl Meal
             </label>
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-main" value="Vegetarian Lasagna">
-              Vegetarian Lasagna
+              <input type="radio" name="menu-item-main" value="Pea and Beans Soup">
+              Pea and Beans Soup
             </label>
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-main" value="Fish Tacos">
-              Fish Tacos
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-main" value="Falafel Wrap">
-              Falafel Wrap
-            </label>
-          </div>
-        </div>
-        <div class="menu-section" id="menu-section">
-          <h2>Appetizers</h2>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-app" value="Sweet Potato Fries">
-              Sweet Potato Fries
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-app" value="Buffalo Wings">
-              Buffalo Wings
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-app" value="Caprese Salad">
-              Caprese Salad
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-app" value="Mozzarella Sticks">
-              Mozzarella Sticks
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-app" value="Hummus and Pita">
-              Hummus and Pita
+              <input type="radio" name="menu-item-main" value="Double Toppings Pizza">
+              Double Toppings Pizza
             </label>
           </div>
         </div>
@@ -82,14 +43,14 @@
           <h2>Sides</h2>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-side" value="French Fries">
-              French Fries
+              <input type="radio" name="menu-item-side" value="Cole Slaw">
+              Cole Slaw
             </label>
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-side" value="Garlic Bread">
-              Garlic Bread
+              <input type="radio" name="menu-item-side" value="Pretzels">
+              Pretzels
             </label>
           </div>
           <div class="menu-item">
@@ -100,14 +61,8 @@
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-side" value="Fried Plantains">
-              Fried Plantains
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-side" value="Roasted Vegetables">
-              Roasted Vegetables
+              <input type="radio" name="menu-item-side" value="Greek Yogurt">
+              Greek Yogurt
             </label>
           </div>
         </div>
@@ -115,14 +70,14 @@
           <h2>Drinks</h2>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-drnk" value="Soda">
-              Soda
+              <input type="radio" name="menu-item-drnk" value="Cocacola">
+              Cocacola
             </label>
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-drnk" value="Iced Tea">
-              Iced Tea
+              <input type="radio" name="menu-item-drnk" value="Iced Water">
+              Iced Water
             </label>
           </div>
           <div class="menu-item">
@@ -133,30 +88,130 @@
           </div>
           <div class="menu-item">
             <label>
-              <input type="radio" name="menu-item-drnk" value="Fruit Smoothie">
-              Fruit Smoothie
-            </label>
-          </div>
-          <div class="menu-item">
-            <label>
-              <input type="radio" name="menu-item-drnk" value="Coffee">
-              Coffee
+              <input type="radio" name="menu-item-drnk" value="Ice Cream Smoothie">
+              Ice Cream Smoothie
             </label>
           </div>
         </div>
       </div>
-      <button id="submit-button" type="submit">Submit Order</button>
+      <button id="next-button">Confirm Order</button>
     </div>
-    <div class="thank-you-page" id="thank-you-page">
-      <h1>Thank you for your order!</h1>
-      <!-- <p>Here is what you ordered:</p>
-      <div class="order-summary">
-        <p>Main Course: <span id="main-course"></span></p>
-        <p>Appetizer: <span id="appetizer"></span></p>
-        <p>Side: <span id="side"></span></p>
-        <p>Drink: <span id="drink"></span></p>
-      </div> -->
+    <div class="menu-container menu-container-demo" id="menu-container-demo">
+      <h2>Your order is being processed. Meanwhile, tell us more about yourself.</h2>
+      <div class="menu-sections-container">
+        <div class="menu-section">
+          <h4>Gender:</h4>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-gender" value="Male">
+              Male
+            </label>
+          </div>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-gender" value="Female">
+              Female
+            </label>
+          </div>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-gender" value="Other">
+              Other
+            </label>
+          </div>
+          <h4>Enter your year of birth.</h4>
+          <div class="menu-item">
+            <label>
+              <input type="number" min="1900" max="2023" step="1" value="2004" name="menu-item-age" />
+            </label>
+          </div>
+        </div>
+        <div class="menu-section">
+          <h4>Which state are you from?</h4>
+          <div class="menu-item">
+            <select name="menu-item-states">
+              <option value="">Select a state or union territory</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+            </select>            
+          </div>
+          <h4>and are you from...</h4>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-citytier" value="a village">
+              a village
+            </label>
+          </div>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-citytier" value="a town">
+              a town
+            </label>
+          </div>
+          <div class="menu-item">
+            <label>
+              <input type="radio" name="menu-item-citytier" value="a city">
+              a city
+            </label>
+          </div>
+        </div>
+        <div class="menu-section">
+          <h4>Approximately how many glasses of water did you drink yesterday?</h4>
+          <div class="menu-item">
+            <label>
+              <input type="number" min="0" max="20" step="1" value="0" name="menu-item-waterglasses" />
+            </label>
+          </div>
+        </div>
+      </div>
+      <button id="submit-button" type="submit">Done</button>
     </div>
-    <script src="script.js"></script>
+    <div class="menu-container menu-container-thanky" id="thank-you-page">
+      <h3 style="text-align: center;">Thank you for your order!</h3>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+      import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js'
+      // TODO: Add SDKs for Firebase products that you want to use
+    
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      
+    </script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

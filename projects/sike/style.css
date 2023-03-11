@@ -24,17 +24,12 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.thank-you-page {
-  position: relative;
-  z-index: 1;
-  max-width: 80%;
-  margin: 5%;
-  padding: 2.5% 5% 2.5% 5%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.menu-container-thanky {
   display: none;
-  visibility: hidden;
+}
+
+.menu-container-demo {
+  display: none;
 }
 
 .menu-sections-container {
@@ -93,5 +88,8 @@ button:hover {
     }
     button {
         margin: 5% auto 2.5% auto;
+    }
+    .background {
+      background-size: cover;
     }
 }
