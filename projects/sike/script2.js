@@ -9,7 +9,7 @@ const submitBtn = document.getElementById('submit-button');
 
 const checkboxes = document.querySelectorAll('input[name="menu-item-main"]');
 
-var response = {main:"", side:"", drink:"", gender:"", age:"", state:"", citytier:"", glasses_of_water:"", r:0};
+var response = {main:"", side:"", drink:"", gender:"", age:"", state:"", citytier:"", glasses_of_water:"", r:0, name:""};
 
 // Randomly load a background image
 var r = Math.random();
@@ -66,9 +66,11 @@ submitBtn.addEventListener("click", function(event) {
     }
     catch (e) {console.log(e)}
     response["age"] = document.querySelector('input[name="menu-item-age"]').value;
+    response["name"] = document.querySelector('input[name="menu-item-name"]').value;
     response["state"] = document.querySelector('select[name="menu-item-states"]').value;
     response["glasses_of_water"] = document.querySelector('input[name="menu-item-waterglasses"]').value;
     response["r"] = r;
+
 
     // addDoc(collection(db, "users"), response)
     // .then((docRef) => {
