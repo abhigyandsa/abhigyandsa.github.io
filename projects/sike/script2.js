@@ -72,13 +72,13 @@ submitBtn.addEventListener("click", function(event) {
     response["r"] = r;
 
 
-    // addDoc(collection(db, "users"), response)
-    // .then((docRef) => {
-    //     console.log("Document written with ID: ", docRef.id);
-    // })
-    // .catch((error) => {
-    //     console.error("Error adding document: ", error);
-    // });
+    addDoc(collection(db, "users"), response)
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
 
     console.log(response);
     const selectedSideMenu = document.querySelector('input[name="menu-item-side"]:checked');
