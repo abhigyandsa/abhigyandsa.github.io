@@ -1,0 +1,76 @@
+.grid{
+    cursor: pointer;
+    user-select: none;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.cell{
+    border: 1px solid black;
+    width: calc(min(100vw, 100vh) / 40);
+    height: calc(min(100vw, 100vh) / 40);
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.cell.active{
+    background-color: #000;
+}
+.cell:hover{
+    background-color: #ccc;
+}
+.cell.active:hover{
+    background-color: #222;
+}
+
+/* controls */
+
+.controls{
+    display: flex;
+    justify-content: center;
+}
+.controls > div{
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.controls > div:hover{
+    background-color: #ccc;
+}
+.controls > div.active{
+    background-color: #000;
+    color: #fff;
+}
+
+#clear:hover{
+    /* material red */
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* output */
+
+.output{
+    display: flex;
+    justify-content: center;
+}
+.output > span{
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+.output > .prediction{
+    padding: 0 20px;
+    margin: 0 5px;
+    border-radius: 18px;
+    border: 1px solid black;
+}
