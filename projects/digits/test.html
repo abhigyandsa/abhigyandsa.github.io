@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Histogram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+
+        window.onload = createBars;
+
+        // Example of updating the histogram with a new array after a delay (2 seconds)
+        setTimeout(() => {
+            const newNumbers = [2, 4, 6, 8, 10, 8, 6, 4, 2, 1];
+            updateHistogram(newNumbers);
+        }, 2000);
+    </script>
+
+
+</body>
+
+</html>

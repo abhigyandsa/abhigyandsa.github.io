@@ -2,10 +2,10 @@ let isDragging = false;
 let action = 'draw';
 
 
-function handleDrawContinue(cell){
+function handleDrawContinue(cell) {
     if (action === 'draw') {
         cell.classList.add('active');
-    } else {
+    } else if (action === 'erase') {
         cell.classList.remove('active');
     }
     predict();
@@ -75,7 +75,44 @@ clear.addEventListener('click', () => {
 // when any cell's classlist is changed state, call the predict() method
 // and update the prediction
 
-function predict(){
+let numbers = [3, 1, 5, 8, 2, 7, 4, 6, 10, 9];
+
+function createBars() {
+    const histogramContainer = document.getElementById('histogram-container');
+
+    let num_sum = numbers.reduce((a, b) => a + b, 0);
+
+    // Clear existing bars
+    histogramContainer.innerHTML = '';
+
+    numbers.forEach((number, index) => {
+        const bigbar = document.createElement('div');
+        bigbar.className = 'bigbar';
+        histogramContainer.appendChild(bigbar);
+        const pp = document.createElement('p');
+        pp.style.fontSize = '16px';
+        pp.style.margin = '0';
+        pp.style.padding = '0';
+        pp.innerHTML = Math.round((number * 100) / num_sum) + '%';
+        bigbar.appendChild(pp);
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.height = (number / num_sum) * 1024 + 'px';
+        bigbar.appendChild(bar);
+        const p = document.createElement('p');
+        p.innerHTML = index;
+        p.style.fontSize = '16px';
+        p.style.margin = '0 0 0 8px';
+        bigbar.appendChild(p);
+    });
+}
+
+function updateHistogram(newArray) {
+    numbers = newArray;
+    createBars();
+}
+
+function predict() {
     console.log('predicting');
     prediction = document.querySelector('.prediction');
 
@@ -90,9 +127,14 @@ function predict(){
 
     console.log(inputs);
 
-    output = Math.floor(Math.random() * 10);
+    output = Array.from({ length: 10 }, () => Math.random());;
     // wait for 200ms
     setTimeout(() => {
-        prediction.innerHTML = output;
+        prediction.innerHTML = output.indexOf(Math.max(...output));
+        updateHistogram(output);
     }, 500);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    createBars();
+});
