@@ -69,13 +69,15 @@ clear.addEventListener('click', () => {
     cells.forEach(cell => {
         cell.classList.remove('active');
     });
+    numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    createBars();
 });
 
 // prediction model
 // when any cell's classlist is changed state, call the predict() method
 // and update the prediction
 
-let numbers = [3, 1, 5, 8, 2, 7, 4, 6, 10, 9];
+let numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function createBars() {
     const histogramContainer = document.getElementById('histogram-container');
@@ -84,27 +86,38 @@ function createBars() {
 
     // Clear existing bars
     histogramContainer.innerHTML = '';
-
-    numbers.forEach((number, index) => {
+    if (num_sum !== 0) {
+        numbers.forEach((number, index) => {
+            const bigbar = document.createElement('div');
+            bigbar.className = 'bigbar';
+            histogramContainer.appendChild(bigbar);
+            const pp = document.createElement('p');
+            pp.style.fontSize = '16px';
+            pp.style.margin = '0';
+            pp.style.padding = '0';
+            pp.innerHTML = Math.round((number * 100) / num_sum) + '%';
+            bigbar.appendChild(pp);
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            bar.style.height = (number / num_sum) * 1024 + 'px';
+            bigbar.appendChild(bar);
+            const p = document.createElement('p');
+            p.innerHTML = index;
+            p.style.fontSize = '16px';
+            p.style.margin = '0 0 0 8px';
+            bigbar.appendChild(p);
+        });
+    }
+    else {
         const bigbar = document.createElement('div');
         bigbar.className = 'bigbar';
         histogramContainer.appendChild(bigbar);
-        const pp = document.createElement('p');
-        pp.style.fontSize = '16px';
-        pp.style.margin = '0';
-        pp.style.padding = '0';
-        pp.innerHTML = Math.round((number * 100) / num_sum) + '%';
-        bigbar.appendChild(pp);
-        const bar = document.createElement('div');
-        bar.className = 'bar';
-        bar.style.height = (number / num_sum) * 1024 + 'px';
-        bigbar.appendChild(bar);
         const p = document.createElement('p');
-        p.innerHTML = index;
-        p.style.fontSize = '16px';
+        p.innerHTML = '🤔';
+        p.style.fontSize = '128px';
         p.style.margin = '0 0 0 8px';
         bigbar.appendChild(p);
-    });
+    }
 }
 
 function updateHistogram(newArray) {
