@@ -8,6 +8,8 @@ function handleDrawContinue(cell) {
     } else if (action === 'erase') {
         cell.classList.remove('active');
     }
+    output = document.querySelector('.output');
+    output.style.opacity = 1;
     predict();
 }
 
@@ -71,6 +73,8 @@ clear.addEventListener('click', () => {
     });
     numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     createBars();
+    output = document.querySelector('.output');
+    output.style.opacity = 0;
 });
 
 // prediction model
@@ -113,6 +117,7 @@ function createBars() {
         bigbar.className = 'bigbar';
         histogramContainer.appendChild(bigbar);
         const p = document.createElement('p');
+        p.style.textAlign = 'center';
         p.innerHTML = '🤔';
         p.style.fontSize = '128px';
         p.style.margin = '0 0 0 8px';

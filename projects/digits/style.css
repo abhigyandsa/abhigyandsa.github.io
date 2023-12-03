@@ -1,7 +1,19 @@
 * {
     font-family: sans-serif;
 }
-
+.center{
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@media only screen and (width < 600px){
+    .container{
+        flex-direction: column;
+    }
+}
 .header {
     display: flex;
     justify-content: center;
@@ -29,8 +41,8 @@
 
 .cell {
     border: 1px solid black;
-    width: calc(min(100vw, 100vh) / 80);
-    height: calc(min(100vw, 100vh) / 80);
+    width: calc(min(100vw, 100vh) / 60);
+    height: calc(min(100vw, 100vh) / 60);
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -85,6 +97,7 @@
 
 .output {
     display: flex;
+    opacity: 0;
     justify-content: center;
     margin-top: 32px;
 }
