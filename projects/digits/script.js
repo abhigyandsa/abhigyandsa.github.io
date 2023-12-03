@@ -156,7 +156,7 @@ async function predict() {
         unflattened.push(inputs.slice(i * 28, (i + 1) * 28));
     }
 
-    let prediction_res = model.predict(inputs);
+    let prediction_res = model.predict(tf.tendor2s(unflattened));
     let probabilities = prediction_res.dataSync();
 
     console.log(unflattened);
