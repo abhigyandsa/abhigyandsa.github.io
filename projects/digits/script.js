@@ -103,7 +103,7 @@ function createBars() {
             bigbar.appendChild(pp);
             const bar = document.createElement('div');
             bar.className = 'bar';
-            bar.style.height = (number / num_sum) * 256 + 'px';
+            bar.style.height = (number / num_sum) * 64 + 'px';
             bigbar.appendChild(bar);
             const p = document.createElement('p');
             p.innerHTML = index;
