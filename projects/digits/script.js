@@ -130,9 +130,16 @@ function updateHistogram(newArray) {
     createBars();
 }
 
-function predict() {
+async function loadModel() {
+    const model = await tf.loadLayersModel('tfjs_model/model.json');
+    return model;
+}
+
+async function predict() {
     console.log('predicting');
     prediction = document.querySelector('.prediction');
+
+    const model = await loadModel();
 
     inputs = []
     cells.forEach(cell => {
@@ -143,9 +150,19 @@ function predict() {
         }
     });
 
-    console.log(inputs);
+    let unflattened = [];
 
-    output = Array.from({ length: 10 }, () => Math.random());;
+    for (let i = 0; i < 28; i++) {
+        unflattened.push(inputs.slice(i * 28, (i + 1) * 28));
+    }
+
+    let prediction_res = model.predict(unflattened);
+    let probabilities = prediction_res.dataSync();
+
+    console.log(unflattened);
+    // console.log(inputs);
+
+    output = probabilities;
     // wait for 200ms
     setTimeout(() => {
         prediction.innerHTML = output.indexOf(Math.max(...output));
