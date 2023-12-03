@@ -156,7 +156,7 @@ async function predict() {
         unflattened.push(inputs.slice(i * 28, (i + 1) * 28));
     }
 
-    let prediction_res = model.predict(unflattened);
+    let prediction_res = model.predict(inputs);
     let probabilities = prediction_res.dataSync();
 
     console.log(unflattened);
